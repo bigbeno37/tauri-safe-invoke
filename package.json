@@ -1,0 +1,50 @@
+{
+  "name": "tauri-safe-invoke",
+  "files": [
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "LICENSE",
+    "dist/**/*"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "version": "1.0.0",
+  "description": "Adds type safety to Tauri command invocation",
+  "scripts": {
+    "build": "tsc && tsc --project tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbeno37/tauri-safe-invoke.git"
+  },
+  "keywords": [
+    "tauri",
+    "invoke",
+    "invocation",
+    "typescript",
+    "ts",
+    "type",
+    "safe",
+    "typesafe",
+    "command",
+    "zod",
+    "validation"
+  ],
+  "author": "bigbeno37",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigbeno37/tauri-safe-invoke/issues"
+  },
+  "homepage": "https://github.com/bigbeno37/tauri-safe-invoke#readme",
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.2",
+    "typescript": "^4.7.4",
+    "zod": "^3.18.0"
+  }
+}
