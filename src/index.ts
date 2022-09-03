@@ -85,7 +85,7 @@ export const createSafeInvoker = <S extends ZodSchema | ResultSchema<ZodSchema, 
 			}
 
 			if (!result.success) {
-				throw new Error(`Invalid error type received while invoking command "${command}"! Cause: ${result.error.format()}`);
+				throw new Error(`Invalid error type received while invoking command "${command}"! Cause: ${result.error.format()._errors}`);
 			}
 
 			// TODO: Remove any
@@ -93,7 +93,7 @@ export const createSafeInvoker = <S extends ZodSchema | ResultSchema<ZodSchema, 
 		}
 
 		if (!parseResult.success) {
-			throw new Error(`Invalid response received while invoking command "${command}"! Cause: ${parseResult.error.format()}`);
+			throw new Error(`Invalid response received while invoking command "${command}"! Cause: ${parseResult.error.format()._errors}`);
 		}
 
 		// TODO: Remove any
