@@ -13,10 +13,10 @@
     "import": "./dist/esm/index.js",
     "require": "./dist/cjs/index.js"
   },
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Adds type safety to Tauri command invocation",
   "scripts": {
-    "build": "tsc && tsc --project tsconfig.cjs.json",
+    "build": "rimraf ./dist && tsc && tsc --project tsconfig.cjs.json",
     "prepack": "npm run build"
   },
   "repository": {
@@ -44,7 +44,10 @@
   "homepage": "https://github.com/bigbeno37/tauri-safe-invoke#readme",
   "dependencies": {
     "@tauri-apps/api": "^1.0.2",
-    "typescript": "^4.7.4",
+    "typescript": "^4.8.2",
     "zod": "^3.18.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }
