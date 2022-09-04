@@ -63,7 +63,7 @@ export const createSafeInvoker = <S extends ZodSchema | ResultSchema<ZodSchema, 
 		let parseResult;
 
 		try {
-			const response = invoke(command, data as InvokeArgs);
+			const response = await invoke(command, data as InvokeArgs);
 
 			parseResult = isResultSchema(schema) ? schema.ok.safeParse(response) : schema.safeParse(response);
 
