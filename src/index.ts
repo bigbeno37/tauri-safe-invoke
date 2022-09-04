@@ -89,7 +89,7 @@ export const createSafeInvoker = <S extends ZodSchema | ResultSchema<ZodSchema, 
 			}
 
 			// TODO: Remove any
-			return { ok: false, data: result.data } as any;
+			return { ok: false, error: result.data } as any;
 		}
 
 		if (!parseResult.success) {
